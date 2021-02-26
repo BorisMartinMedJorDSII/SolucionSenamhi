@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListarCiudades">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarCiudadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarCiudadesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarxCiudad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarxCiudadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarxCiudadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListarCiudadesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarCiudades" />
+  </wsdl:message>
+  <wsdl:message name="ListarCiudadesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarCiudadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarxCiudadSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarxCiudad" />
+  </wsdl:message>
+  <wsdl:message name="ListarxCiudadSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarxCiudadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SenamhiSoap">
+    <wsdl:operation name="ListarCiudades">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mostrar las Temperaturas</wsdl:documentation>
+      <wsdl:input message="tns:ListarCiudadesSoapIn" />
+      <wsdl:output message="tns:ListarCiudadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarxCiudad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Listar Temperatura filtrado por Ciudad</wsdl:documentation>
+      <wsdl:input message="tns:ListarxCiudadSoapIn" />
+      <wsdl:output message="tns:ListarxCiudadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SenamhiSoap" type="tns:SenamhiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarCiudades">
+      <soap:operation soapAction="http://tempuri.org/ListarCiudades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarxCiudad">
+      <soap:operation soapAction="http://tempuri.org/ListarxCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SenamhiSoap12" type="tns:SenamhiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarCiudades">
+      <soap12:operation soapAction="http://tempuri.org/ListarCiudades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarxCiudad">
+      <soap12:operation soapAction="http://tempuri.org/ListarxCiudad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Senamhi">
+    <wsdl:port name="SenamhiSoap" binding="tns:SenamhiSoap">
+      <soap:address location="https://localhost:44311/Senamhi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SenamhiSoap12" binding="tns:SenamhiSoap12">
+      <soap12:address location="https://localhost:44311/Senamhi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,161 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+    width: calc(100% - 200px);
+    margin: 0 auto;
+    max-width: 990px;
+
+}
+
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    width: 100%;
+    background: none;
+    transition-duration: 0.3s;
+}
+
+    #topbar .logo {
+        float: left;
+        height: 40px;
+        color:white;
+        text-transform: capitalize;
+        line-height: 30px;
+        font-size: 30px;
+        font-weight: 600;
+        transition-duration: 0.3s;
+    }
+
+
+    #topbar nav {
+        float: right;
+    }
+
+        #topbar nav a {
+            float: left;
+            display: block;
+            float: left;
+            margin: 0 0 0 35px;
+            color: #ffffff;
+            text-decoration: none;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            font-weight: 600;
+           
+        }
+
+
+    #topbar .nav_button {
+        display: none;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        float: right;
+        background: none;
+     
+        background-size: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+@media screen and (max-width: 500px) {
+    #topbar.style1 .logo {
+        z-index: 60;
+        position: relative;
+    }
+
+}
+
+
+
+header div {
+    padding: 200px 20px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 60px;
+    background-image: url('nube.jpg');
+
+}
+
+header div span {
+     display: block;
+     text-align: center;
+     font-size: 30px;
+     margin-top: 15px;
+     font-weight: 300;
+   }
+
+
+/*MARCO EXTERNO DE BUSQUEDA*/
+#busca {
+    margin: -90px auto 50px auto;
+    max-width: 700px;
+    width: 1094px;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 30px 50px;
+    box-shadow: 0 10px 10px #C4CAD3;
+
+}
+
+/*ESTILO DE TEXTO*/
+#busca input[type="text"] {
+    line-height: 36px;
+    padding: 2px 20px 2px 60px;
+    background: #f0f0f0 no-repeat 20px center;
+    border-radius: 3px;
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    float: left;
+    background-size: 20px 20px;
+    }
+
+
+/*BOTON BUSQUEDA*/
+
+#busca input[type="submit"] {
+    margin-left: 78px;
+    line-height: 40px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    float: left;
+    background: #30A9D7;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*CUADRO BUSQUEDA POR CIUDAD*/
+#busca div { 
+    margin-top: 30px;
+    float: left;
+    width: 100%;
+    color: #8D9CA7;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+
+
+
+
